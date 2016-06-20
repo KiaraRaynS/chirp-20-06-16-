@@ -5,14 +5,14 @@
   <meta charset="utf-8">
   <title>Chirper</title>
   <link rel='stylesheet' href="{% static 'appdjango/css/css.css' %}"/>
-  <link rel='stylesheet' href="{% static 'appdjango/css/css/bookstrap.css'%}"/>
+  <link rel='stylesheet' href="{% static 'appdjango/css/css/bootstrap.css'%}"/>
 </head>
 <body>
-  <div class='container'>
-    <div class='blocktext'>
-      {% block content %}
-        No content provided
-      {% endblock %}
+  <div class='blocktext'>
+    <div class='container'>
+    {% block content %}
+      No content provided
+    {% endblock %}
     </div>
   </div>
 </body>
