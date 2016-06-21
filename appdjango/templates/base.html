@@ -8,6 +8,8 @@
   <link rel='stylesheet' href="{% static 'appdjango/css/css/bootstrap.css'%}"/>
 </head>
 <body>
+  <a href="{% url 'login' %}">Login</a>
+  <a href="{% url 'logout' %}?next=/">Logout</a>
   <div class='blocktext'>
     <div class='container'>
     {% block content %}

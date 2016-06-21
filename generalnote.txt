@@ -1,0 +1,7 @@
+model = ModelName
+def get_getqueryset(self):
+    return ModelName.objects.['all()', '.get()', '.filter()']
+
+
+
+context['keyforobject'] = value of object
