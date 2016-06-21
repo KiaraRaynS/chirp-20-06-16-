@@ -3,7 +3,7 @@
 {% block content %}
   <p>Welcome {{ request.user }}</p>
   <h1 font-family='monospace'>Chirper</h1>
-  <p>{{amount}}s to display</p>
+  <p>{{amount}} chirps displayed</p>
   {% for item in object_list %}
   <div class="panel panel-default">
       <div class="panel-heading">
@@ -11,6 +11,10 @@
               </div>
                 <div class="panel-body">
                   {{ item.body }}
+                    <br>
+                    {% if item.user == request.user %}
+                      <a href="{% url 'detailview' item.pk %}">Details</a>
+                    {% endif %}
                         </div>
                       </div>
       <br>

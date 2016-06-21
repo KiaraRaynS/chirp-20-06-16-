@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h3>{{ chirp.user }}</h3>
+  <div class="well">
+  <p>"{{ chirp.body }}"</p>
+  </div>
+  <small>Created: {{ chirp.date }}</small>
+{% endblock %}

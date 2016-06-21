@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+  <b>
+  <form type='' method="post">
+  {{ form.as_p }}
+  {% csrf_token %}
+  <input class='btn btn-default' type="submit" value="Chirp">
+  </form>
+{% endblock %}
