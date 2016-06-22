@@ -1,5 +1,5 @@
 from django.contrib import admin
-from appdjango.models import Chirp, StopWord
+from appdjango.models import Chirp, StopWord, Profile
 
 
 class StopWordAdmin(admin.ModelAdmin):
@@ -15,3 +15,6 @@ class ChirpAdmin(admin.ModelAdmin):
     # Will impliment a search bar
 
 admin.site.register(Chirp, ChirpAdmin)
+
+
+admin.site.register(Profile)
