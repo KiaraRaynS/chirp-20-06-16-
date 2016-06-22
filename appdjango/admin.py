@@ -1,5 +1,12 @@
 from django.contrib import admin
-from appdjango.models import Chirp
+from appdjango.models import Chirp, StopWord
+
+
+class StopWordAdmin(admin.ModelAdmin):
+    list_display = ['word']
+    search_fields = ['word']
+
+admin.site.register(StopWord, StopWordAdmin)
 
 
 class ChirpAdmin(admin.ModelAdmin):

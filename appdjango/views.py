@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import View, TemplateView, ListView, DetailView, CreateView
-from appdjango.models import Chirp
+from appdjango.models import Chirp, StopWord
 
 
 class ViewIndex(ListView):
@@ -26,6 +26,13 @@ class CreateChirp(CreateView):
     success_url = '/'
 
     def form_valid(self, form):
+        stop_word = StopWord.objects.all()
+        # if trump, clinton, sanders in chirp.body
+        chirp_body = form.cleaned_data['body'].lower()
+        for stop_word in stop_word:
+            if stop_word.word in chirp_body:
+                form.add_error('body', 'Please use elegant diction, not that')
+                return self.form_invalid(form)
         chirp = form.save(commit=False)
         chirp.user = self.request.user
         return super().form_valid(form)

@@ -10,3 +10,7 @@ class Chirp(models.Model):
 
     class Meta:
         ordering = ["-date"]
+
+
+class StopWord(models.Model):
+    word = models.CharField(max_length=50)
